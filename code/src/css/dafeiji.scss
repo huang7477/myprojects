@@ -1,0 +1,97 @@
+$w:width;
+$h:height;
+$back:background;
+$p:position;
+$bo:border;
+$font:font-size;
+$k:100px;
+$co:color;
+@mixin margin{
+    margin:0 auto;
+}
+@mixin position{
+    position: absolute;
+}
+
+
+* {@include margin; #{$bo}: none; padding: 0;}
+body, html {#{$w}: 100%; #{$h}: 100%; overflow: hidden;}
+ul, li {list-style: none;}
+
+#main {
+    #{$w}: $k + 380px;
+    #{$h}: 100%;
+    #{$back}: url(../images2/bg.jpg) repeat-y;
+    @include margin;
+    #{$p}: relative;
+
+    #list {
+        #{$w}: $k + 100px;
+        @include position;
+        left: $k + 40px;
+        top: $k;
+        li {
+            #{$w}: $k + 98px;
+            #{$h}: $k - 30px;
+            #{$bo}: 1px solid black;
+            #{$back}: #f46;
+             #{$co}: white;
+            #{$font}: 30px;
+            text-align: center;
+            line-height:$k - 30px;
+            margin-bottom: 10px;
+            #{$bo}-radius: 5px;
+            cursor: pointer;
+        }
+    }
+    .logo {
+        #{$w}:$k + 328px; 
+        #{$h}:$k + 4px;
+        #{$back}: url(../images2/logo.png) no-repeat;
+        @include position; 
+        left: 26px; top: 20%;
+    }
+    .load {
+        #{$w}:$k + 100px; 
+        #{$h}: $k - 58px;
+        #{$back}: url(../images2/loading1.png) no-repeat;
+        @include position; left: 140px; top: 70%;
+    }
+    .myplane{
+        #{$w}: $k - 2px; 
+        #{$h}: $k + 22px;
+        #{$back}: url(../images2/me.png) no-repeat;
+        @include position;
+    }
+    .bullet {
+        #{$w}: 7px; 
+        #{$h}: 18px;
+        #{$back}: url(../images2/bullet.png) no-repeat;
+        @include position;
+    }
+    .bullet-die {
+        #{$w}:$k - 60px; 
+        #{$h}: 43px;
+        #{$back}: url(../images2/die1.png) no-repeat;
+        @include position;
+    }
+    .enemy-large {
+        #{$w}: $k + 65px; 
+        #{$h}:$k + 156px;
+        #{$back}: url(../images2/plane3.png) no-repeat;
+        @include position;
+    }
+    .enemy-middle {
+        #{$w}:$k - 30px; 
+        #{$h}: $k - 8px;
+        #{$back}: url(../images2/plane2.png) no-repeat;
+        @include position;
+    }
+    .enemy-small {
+        #{$w}:$k - 41px; 
+        #{$h}: 36px;
+        #{$back}: url(../images2/plane1.png) no-repeat;
+        @include position;
+    }
+}
+
